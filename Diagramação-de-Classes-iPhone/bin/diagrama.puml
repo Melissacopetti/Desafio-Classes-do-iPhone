@@ -1,0 +1,37 @@
+@startuml
+
+package com.iphone {
+    class ReprodutorMusical {
+        - listaDeReproducao: List<String>
+        - emReproducao: boolean
+        + adicionarMusica(musica: String): void
+        + selecionarMusica(indice: int): void
+        + tocar(): void
+        + pausar(): void
+    }
+
+    class AparelhoTelefonico {
+        - emLigacao: boolean
+        - numeroAtual: String
+        - contatos: Map<String, String>
+        + adicionarContato(nome: String, numero: String): void
+        + ligar(numero: String): void
+        + atender(): void
+        + iniciarCorreioDeVoz(): void
+        + enviarMensagem(mensagem: String): void
+    }
+
+    class NavegadorInternet {
+        - abas: List<String>
+        - abaAtual: int
+        + adicionarNovaAba(pagina: String): void
+        + exibirPagina(): void
+        + atualizarPagina(novaPagina: String): void
+    }
+}
+
+ReprodutorMusical --|> List
+AparelhoTelefonico --|> Map
+NavegadorInternet --|> List
+
+@enduml
